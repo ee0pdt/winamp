@@ -2,51 +2,53 @@
   display: flex;
   align-items: center;
   height: 14px;
-  background: linear-gradient(180deg, #1e3a5f 0%, #0a1628 100%);
-  border-bottom: 1px solid #0a1628;
+  background: linear-gradient(180deg,
+    #4a6a8a 0%,
+    #2a4a6a 30%,
+    #1a3a5a 70%,
+    #0a2a4a 100%
+  );
   cursor: move;
   user-select: none;
+  padding: 0 3px;
+  position: relative;
 }
 
 .titlebar-grip {
-  width: 20px;
-  height: 9px;
-  background: repeating-linear-gradient(
-    180deg,
-    #1e3a5f 0px,
-    #1e3a5f 1px,
-    #0a1628 1px,
-    #0a1628 2px
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 1px,
+    rgba(0,0,0,0.4) 1px,
+    rgba(0,0,0,0.4) 2px,
+    transparent 2px,
+    transparent 3px
   );
 }
 
 .titlebar-grip.left {
-  margin-left: 6px;
+  width: 100px;
 }
 
 .titlebar-grip.right {
   flex: 1;
-  margin-right: 4px;
 }
 
 .titlebar-title {
-  flex: 1;
-  text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: bold;
   color: #fff;
   text-shadow: 1px 1px 0 #000;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 0 8px;
+  text-transform: uppercase;
 }
 
 .titlebar-buttons {
   display: flex;
-  gap: 1px;
-  margin-right: 3px;
+  gap: 3px;
 }
 
 .titlebar-btn {
@@ -56,69 +58,68 @@
   cursor: pointer;
   padding: 0;
   position: relative;
+  border-radius: 0;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,0.3),
+    inset -1px -1px 0 rgba(0,0,0,0.5);
+}
+
+.titlebar-btn:active {
+  box-shadow:
+    inset -1px -1px 0 rgba(255,255,255,0.3),
+    inset 1px 1px 0 rgba(0,0,0,0.5);
 }
 
 .titlebar-btn.minimize {
-  background: linear-gradient(180deg, #4a7a4a 0%, #2d4a2d 100%);
+  background: linear-gradient(180deg, #6a8a6a 0%, #3a5a3a 100%);
 }
 
 .titlebar-btn.minimize:hover {
-  background: linear-gradient(180deg, #5a9a5a 0%, #3d6a3d 100%);
-}
-
-.titlebar-btn.minimize:active {
-  background: linear-gradient(180deg, #2d4a2d 0%, #4a7a4a 100%);
+  background: linear-gradient(180deg, #7a9a7a 0%, #4a6a4a 100%);
 }
 
 .titlebar-btn.minimize span {
   position: absolute;
   bottom: 2px;
-  left: 2px;
-  width: 5px;
+  left: 1px;
+  right: 1px;
   height: 2px;
   background: #000;
 }
 
 .titlebar-btn.shade {
-  background: linear-gradient(180deg, #4a7a4a 0%, #2d4a2d 100%);
+  background: linear-gradient(180deg, #6a8a6a 0%, #3a5a3a 100%);
 }
 
 .titlebar-btn.shade:hover {
-  background: linear-gradient(180deg, #5a9a5a 0%, #3d6a3d 100%);
-}
-
-.titlebar-btn.shade:active {
-  background: linear-gradient(180deg, #2d4a2d 0%, #4a7a4a 100%);
+  background: linear-gradient(180deg, #7a9a7a 0%, #4a6a4a 100%);
 }
 
 .titlebar-btn.shade span {
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 1px;
-  width: 7px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border: 1px solid #000;
   border-top-width: 2px;
   box-sizing: border-box;
+  background: transparent;
 }
 
 .titlebar-btn.close {
-  background: linear-gradient(180deg, #7a4a4a 0%, #4a2d2d 100%);
+  background: linear-gradient(180deg, #8a6a6a 0%, #5a3a3a 100%);
 }
 
 .titlebar-btn.close:hover {
-  background: linear-gradient(180deg, #9a5a5a 0%, #6a3d3d 100%);
-}
-
-.titlebar-btn.close:active {
-  background: linear-gradient(180deg, #4a2d2d 0%, #7a4a4a 100%);
+  background: linear-gradient(180deg, #9a7a7a 0%, #6a4a4a 100%);
 }
 
 .titlebar-btn.close span {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 7px;
+  width: 5px;
   height: 1px;
   background: #000;
   transform: translate(-50%, -50%) rotate(45deg);
@@ -127,7 +128,9 @@
 .titlebar-btn.close span::after {
   content: '';
   position: absolute;
-  width: 7px;
+  top: 0;
+  left: 0;
+  width: 5px;
   height: 1px;
   background: #000;
   transform: rotate(90deg);

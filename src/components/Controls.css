@@ -1,11 +1,11 @@
 .winamp-controls {
-  padding: 4px 7px 8px;
+  padding: 0 10px 8px 10px;
 }
 
 .controls-playback {
   display: flex;
-  gap: 2px;
-  justify-content: center;
+  gap: 0;
+  justify-content: flex-start;
 }
 
 .control-btn {
@@ -13,71 +13,105 @@
   height: 18px;
   border: none;
   cursor: pointer;
-  padding: 2px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg,
     #4a4a4a 0%,
-    #3a3a3a 15%,
-    #2a2a2a 50%,
-    #3a3a3a 85%,
+    #3d3d3d 10%,
+    #2d2d2d 50%,
+    #3d3d3d 90%,
     #4a4a4a 100%
   );
-  border-top: 1px solid #5a5a5a;
-  border-left: 1px solid #5a5a5a;
-  border-right: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
-  color: #ccc;
+  box-shadow:
+    inset 1px 1px 0 #5a5a5a,
+    inset -1px -1px 0 #1a1a1a;
+  color: #1a1a1a;
+  position: relative;
 }
 
 .control-btn svg {
-  width: 14px;
-  height: 14px;
+  width: 9px;
+  height: 9px;
+  filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.2));
 }
 
 .control-btn:hover {
   background: linear-gradient(180deg,
-    #5a5a5a 0%,
-    #4a4a4a 15%,
-    #3a3a3a 50%,
-    #4a4a4a 85%,
-    #5a5a5a 100%
+    #555 0%,
+    #484848 10%,
+    #383838 50%,
+    #484848 90%,
+    #555 100%
   );
-  color: #fff;
 }
 
 .control-btn:active {
   background: linear-gradient(180deg,
     #2a2a2a 0%,
-    #3a3a3a 15%,
-    #4a4a4a 50%,
-    #3a3a3a 85%,
+    #333 10%,
+    #3d3d3d 50%,
+    #333 90%,
     #2a2a2a 100%
   );
-  border-top: 1px solid #1a1a1a;
-  border-left: 1px solid #1a1a1a;
-  border-right: 1px solid #5a5a5a;
-  border-bottom: 1px solid #5a5a5a;
+  box-shadow:
+    inset 1px 1px 0 #1a1a1a,
+    inset -1px -1px 0 #5a5a5a;
+}
+
+.control-btn:active svg {
+  transform: translate(1px, 1px);
 }
 
 .control-btn.active {
   background: linear-gradient(180deg,
-    #4a6a4a 0%,
-    #3a5a3a 15%,
-    #2a4a2a 50%,
-    #3a5a3a 85%,
-    #4a6a4a 100%
+    #3a5a3a 0%,
+    #2d4d2d 10%,
+    #1d3d1d 50%,
+    #2d4d2d 90%,
+    #3a5a3a 100%
   );
-  color: #00ff00;
 }
 
-.control-btn.previous,
+.control-btn.active svg {
+  color: #00cc00;
+  filter: drop-shadow(0 0 2px #00ff00);
+}
+
+.control-btn.previous {
+  width: 23px;
+}
+
+.control-btn.play {
+  width: 23px;
+}
+
+.control-btn.pause {
+  width: 23px;
+}
+
+.control-btn.stop {
+  width: 23px;
+}
+
 .control-btn.next {
   width: 22px;
 }
 
 .control-btn.eject {
   width: 22px;
-  margin-left: 8px;
+  margin-left: 6px;
+}
+
+/* Specific icon styling */
+.control-btn.previous svg,
+.control-btn.next svg {
+  width: 11px;
+  height: 9px;
+}
+
+.control-btn.eject svg {
+  width: 10px;
+  height: 9px;
 }
