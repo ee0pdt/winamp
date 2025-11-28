@@ -1,0 +1,42 @@
+.winamp-container {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  user-select: none;
+}
+
+.winamp-main {
+  width: 275px;
+  background: linear-gradient(180deg, #3a3a50 0%, #2a2a3a 100%);
+  border: 2px outset #4a4a5a;
+  box-shadow:
+    inset 1px 1px 0 #5a5a6a,
+    inset -1px -1px 0 #1a1a2a,
+    2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.winamp-body {
+  padding-bottom: 4px;
+}
+
+/* Classic Winamp skin pattern */
+.winamp-main::before {
+  content: '';
+  display: block;
+  height: 0;
+}
+
+/* Resize handle at the bottom */
+.winamp-main::after {
+  content: '';
+  display: block;
+  height: 6px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    transparent 33%,
+    #3a3a4a 33%,
+    #3a3a4a 66%,
+    transparent 66%
+  );
+  cursor: s-resize;
+}
